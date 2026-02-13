@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitHub – Hamna Yahya | Lahore (separated)</title>
+    <!-- Font Awesome 6 (keep in HTML since it's a CDN) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!-- ===== external style.css ===== -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- INFO PANEL -->
+    <div id="infoPanel" class="info-panel">
+      <div style="display: flex; align-items: center; gap: 1rem">
+        <i
+          id="panelIcon"
+          class="fas fa-dumbbell"
+          style="color: #f3b23a; font-size: 1.6rem"
+        ></i>
+        <span id="panelTitle" style="font-weight: 700; flex: 1">FitHub</span>
+        <button id="closePanel" class="info-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div id="panelBody" class="info-body" style="font-size: 1rem">
+        Welcome to FitHub Lahore
+      </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+      <div class="logo"><span>FIT</span>HUB</div>
+      <nav>
+        <ul id="navMenu">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#classes">Classes</a></li>
+          <li><a href="#membership">Membership</a></li>
+          <li><a href="#bmi-calculator">BMI</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="mobile-toggle"><i class="fas fa-bars"></i></div>
+    </header>
+
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <span class="hero-sub">Lahore's Premium Gym</span>
+        <h1>Hamna Yahya's FitHub</h1>
+        <p style="font-size: 1.3rem; margin: 1rem 0">
+          <i class="fas fa-map-marker-alt"></i> Ichra Bazar, Lahore
+        </p>
+        <br /><br />
+        <a
+          href="#contact"
+          class="btn"
+          style="background: #f3b23a; color: #0b121f"
+          >Visit Us Today</a
+        >
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-head">
+        <span class="section-tag">About</span>
+        <h2>Meet Hamna Yahya</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-content">
+          <h3>Founder & Head Coach</h3>
+          <p>
+            Hamna Yahya – fitness entrepreneur from Lahore. Certified personal
+            trainer, nutrition coach, and founder of FitHub.
+          </p>
+          <p><strong>📞 0316 4393246 | ✉ hamnayahya416@gmail.com</strong></p>
+          <div class="coach-quote">
+            <h4 style="color: #0a192c">"Train with me in Lahore"</h4>
+            <p style="margin-top: 0.5rem">
+              Follow Hamna:
+              <a
+                href="https://www.instagram.com/here_is_hamna"
+                target="_blank"
+                style="color: #f3b23a; font-weight: 700"
+              >
+                <i class="fab fa-instagram"></i> here_is_hamna
+              </a>
+            </p>
+          </div>
+        </div>
+        <div class="about-image">
+          <img
+            src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            alt="FitHub gym Lahore"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO SHOWCASE -->
+    <div class="video-showcase">
+      <div class="video-content">
+        <h3 style="color: #f3b23a; font-size: 2rem">
+          <i class="fas fa-play-circle"></i> Train With Us
+        </h3>
+        <p style="font-size: 1.2rem">
+          Real session at FitHub Lahore – members preparing for national
+          powerlifting.
+        </p>
+        <a
+          href="javascript:void(0)"
+          id="watchVideoBtn"
+          class="btn"
+          style="
+            margin-top: 1.5rem;
+            background: #f3b23a;
+            color: #0b121f;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+          "
+        >
+          <i class="fas fa-play"></i> Watch Full Video
+        </a>
+      </div>
+      <div class="video-wrapper">
+        <video
+          id="gymVideo"
+          controls
+          poster="https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        >
+          <source
+            src="https://videos.pexels.com/video-files/853896/853896-hd_1920_1080_30fps.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+    </div>
+
+    <!-- CLASSES -->
+    <section id="classes">
+      <div class="section-head">
+        <span class="section-tag">Classes</span>
+        <h2>Elite Programs</h2>
+      </div>
+      <div class="classes-grid">
+        <div class="class-card">
+          <i class="fas fa-heart" style="color: #f3b23a; font-size: 2rem"></i>
+          <h3>Cardio</h3>
+          <div style="background: #e0e7f0; height: 12px; border-radius: 30px">
+            <div class="progress-fill" style="width: 85%"></div>
+          </div>
+        </div>
+        <div class="class-card">
+          <i
+            class="fas fa-dumbbell"
+            style="color: #f3b23a; font-size: 2rem"
+          ></i>
+          <h3>Strength</h3>
+          <div style="background: #e0e7f0; height: 12px; border-radius: 30px">
+            <div class="progress-fill" style="width: 70%"></div>
+          </div>
+        </div>
+        <div class="class-card">
+          <i class="fas fa-peace" style="color: #f3b23a; font-size: 2rem"></i>
+          <h3>Yoga</h3>
+          <div style="background: #e0e7f0; height: 12px; border-radius: 30px">
+            <div class="progress-fill" style="width: 90%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEMBERSHIP -->
+    <section id="membership">
+      <div class="section-head">
+        <span class="section-tag">Plans</span>
+        <h2>Join Lahore FitHub</h2>
+      </div>
+      <div class="pricing-grid">
+        <div class="plan-card">
+          <div class="plan-name">Basic</div>
+          <div class="plan-price">$29</div>
+          <a href="#contact" class="btn" style="margin-top: 1rem">Visit</a>
+        </div>
+        <div class="plan-card popular">
+          <div class="plan-name">Premium</div>
+          <div class="plan-price">$59</div>
+          <a
+            href="#contact"
+            class="btn"
+            style="background: white; color: #0b121f"
+            >Inquire</a
+          >
+        </div>
+        <div class="plan-card">
+          <div class="plan-name">Pro</div>
+          <div class="plan-price">$79</div>
+          <a href="#contact" class="btn">Free trial</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BMI CALCULATOR -->
+    <section id="bmi-calculator" class="bmi-section">
+      <div class="section-head">
+        <span class="section-tag">Fitness Check</span>
+        <h2>BMI CALCULATOR</h2>
+        <p>Apna height aur weight daalein aur janain aap fit hain ya nahi</p>
+      </div>
+      <div class="bmi-card">
+        <div style="margin-bottom: 2rem">
+          <label
+            style="
+              display: block;
+              margin-bottom: 0.8rem;
+              font-weight: 600;
+              color: #0a192c;
+            "
+            ><i
+              class="fas fa-arrows-alt-v"
+              style="color: #f3b23a; margin-right: 8px"
+            ></i>
+            Height (cm)</label
+          >
+          <input
+            type="number"
+            id="bmiHeight"
+            placeholder="e.g., 165"
+            class="bmi-input"
+          />
+        </div>
+        <div style="margin-bottom: 2.5rem">
+          <label
+            style="
+              display: block;
+              margin-bottom: 0.8rem;
+              font-weight: 600;
+              color: #0a192c;
+            "
+            ><i
+              class="fas fa-weight-scale"
+              style="color: #f3b23a; margin-right: 8px"
+            ></i>
+            Weight (kg)</label
+          >
+          <input
+            type="number"
+            id="bmiWeight"
+            placeholder="e.g., 70"
+            class="bmi-input"
+          />
+        </div>
+        <div style="display: flex; gap: 1rem">
+          <button id="calculateBMI" class="bmi-btn calc">
+            <i class="fas fa-calculator"></i> Calculate
+          </button>
+          <button id="resetBMI" class="bmi-btn reset">
+            <i class="fas fa-undo-alt"></i> Reset
+          </button>
+        </div>
+        <div id="bmiResult" class="bmi-result" style="display: none"></div>
+        <div class="bmi-tip">
+          <i
+            class="fas fa-lightbulb"
+            style="color: #f3b23a; margin-right: 8px"
+          ></i
+          ><strong>Hamna's Tip:</strong> BMI is a guide, not a diagnosis.
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER (contact) -->
+    <footer id="contact">
+      <div class="footer-main">
+        <!-- Column 1: Brand -->
+        <div>
+          <div
+            class="logo"
+            style="color: white; font-size: 2.5rem; margin-bottom: 1rem"
+          >
+            <span style="color: #f3b23a">FIT</span>HUB
+          </div>
+          <p style="margin-bottom: 1.5rem; line-height: 1.6">
+            Lahore's premium gym owned by Hamna Yahya. Certified personal
+            trainer and nutrition coach.
+          </p>
+          <div style="margin-bottom: 1.5rem">
+            <p style="margin-bottom: 0.8rem">
+              <i
+                class="fas fa-map-marker-alt"
+                style="color: #f3b23a; width: 25px"
+              ></i>
+              Ichra Bazar, Lahore, Pakistan
+            </p>
+            <p style="margin-bottom: 0.8rem">
+              <i class="fas fa-phone" style="color: #f3b23a; width: 25px"></i>
+              <a href="tel:+923164393246" style="color: #cbd5e0"
+                >0316 4393246</a
+              >
+            </p>
+            <p style="margin-bottom: 0.8rem">
+              <i
+                class="fas fa-envelope"
+                style="color: #f3b23a; width: 25px"
+              ></i>
+              <a href="mailto:hamnayahya416@gmail.com" style="color: #cbd5e0"
+                >hamnayahya416@gmail.com</a
+              >
+            </p>
+          </div>
+        </div>
+        <!-- Column 2: Quick links -->
+        <div>
+          <h4 class="footer-head">Quick Links</h4>
+          <ul class="footer-links">
+            <li>
+              <a href="#home"
+                ><i
+                  class="fas fa-chevron-right"
+                  style="color: #f3b23a; font-size: 0.8rem; margin-right: 8px"
+                ></i
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#about"
+                ><i
+                  class="fas fa-chevron-right"
+                  style="color: #f3b23a; font-size: 0.8rem; margin-right: 8px"
+                ></i
+                >About Hamna</a
+              >
+            </li>
+            <li>
+              <a href="#classes"
+                ><i
+                  class="fas fa-chevron-right"
+                  style="color: #f3b23a; font-size: 0.8rem; margin-right: 8px"
+                ></i
+                >Classes</a
+              >
+            </li>
+            <li>
+              <a href="#membership"
+                ><i
+                  class="fas fa-chevron-right"
+                  style="color: #f3b23a; font-size: 0.8rem; margin-right: 8px"
+                ></i
+                >Membership</a
+              >
+            </li>
+            <li>
+              <a href="#bmi-calculator"
+                ><i
+                  class="fas fa-chevron-right"
+                  style="color: #f3b23a; font-size: 0.8rem; margin-right: 8px"
+                ></i
+                >BMI Calculator</a
+              >
+            </li>
+          </ul>
+        </div>
+        <!-- Column 3: Social links -->
+        <div>
+          <h4 class="footer-head">Follow Hamna</h4>
+          <!-- Instagram -->
+          <a
+            href="https://www.instagram.com/here_is_hamna/?__pwa=1"
+            target="_blank"
+            class="social-block"
+            ><i
+              class="fab fa-instagram"
+              style="color: #f3b23a; font-size: 2rem"
+            ></i>
+            <div>
+              <strong>@here_is_hamna</strong>
+            </div></a
+          >
+          <!-- Facebook -->
+          <a
+            href="https://www.facebook.com/hamna.yahya.452146"
+            target="_blank"
+            class="social-block"
+            ><i
+              class="fab fa-facebook"
+              style="color: #f3b23a; font-size: 2rem"
+            ></i>
+            <div>
+              <strong>Hamna Yahya</strong>
+            </div></a
+          >
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/in/hamna-yahya-75ab8837b/"
+            target="_blank"
+            class="social-block"
+            ><i
+              class="fab fa-linkedin"
+              style="color: #f3b23a; font-size: 2rem"
+            ></i>
+            <div>
+              <strong>Hamna Yahya</strong>
+            </div></a
+          >
+          <!-- action buttons -->
+          <div style="display: flex; gap: 1rem; margin-top: 1.5rem">
+            <a href="tel:+923164393246" class="footer-call-btn"
+              ><i class="fas fa-phone-alt"></i> Call</a
+            >
+            <a href="mailto:hamnayahya416@gmail.com" class="footer-email-btn"
+              ><i class="fas fa-envelope"></i> Email</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 FitHub Lahore – Powered by Hamna Yahya |</p>
+        <p>
+          <i class="fas fa-envelope"></i> hamnayahya416@gmail.com |
+          <i class="fas fa-phone"></i> 0316 4393246
+        </p>
+      </div>
+    </footer>
+
+    <!-- ===== external script.js ===== -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,426 @@
+/* style.css – FitHub Pro (separated, no changes) */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+body {
+  background-color: #fafcff;
+  color: #1e2a41;
+  line-height: 2;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+}
+
+/* header / nav */
+header {
+  background: linear-gradient(145deg, #0b121f, #151f2f);
+  color: white;
+  padding: 1rem 6%;
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.logo span {
+  color: #f3b23a;
+}
+nav ul {
+  display: flex;
+  gap: 2.2rem;
+  font-weight: 600;
+}
+nav ul li a {
+  padding: 0.4rem 0;
+  transition: 0.2s;
+  border-bottom: 3px solid transparent;
+}
+nav ul li a:hover {
+  color: #f3b23a;
+  border-bottom-color: #f3b23a;
+}
+.mobile-toggle {
+  display: none;
+  font-size: 1.9rem;
+  cursor: pointer;
+}
+
+/* hero */
+.hero {
+  background:
+    linear-gradient(rgba(6, 12, 22, 0.8), rgba(6, 12, 22, 0.8)),
+    url("https://images.pexels.com/photos/416717/pexels-photo-416717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 6%;
+  color: white;
+}
+.hero-content {
+  max-width: 720px;
+}
+.hero h1 {
+  font-size: 3.5rem;
+  line-height: 1.2;
+}
+.hero-sub {
+  color: #f3b23a;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+.btn {
+  display: inline-block;
+  background: #f3b23a;
+  color: #0b121f;
+  padding: 0.9rem 2.5rem;
+  font-weight: 700;
+  border-radius: 50px;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+.btn:hover {
+  background: white;
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(243, 178, 58, 0.3);
+}
+
+/* sections */
+section {
+  padding: 5rem 6%;
+}
+.section-head {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.section-tag {
+  color: #f3b23a;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+.section-head h2 {
+  font-size: 2.8rem;
+  color: #0a192c;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-image img {
+  width: 100%;
+  border-radius: 24px;
+}
+.coach-quote {
+  background: #f0f4fa;
+  padding: 2rem;
+  border-left: 6px solid #f3b23a;
+  border-radius: 0 20px 20px 0;
+}
+.video-showcase {
+  background: #0e1a27;
+  border-radius: 40px;
+  padding: 3rem 4rem;
+  margin: 3rem 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  color: white;
+}
+.video-wrapper {
+  border-radius: 30px;
+  overflow: hidden;
+  border: 3px solid rgba(243, 178, 58, 0.5);
+}
+video {
+  width: 100%;
+  display: block;
+}
+.classes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.class-card {
+  background: white;
+  border-radius: 28px;
+  padding: 2rem;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+}
+.progress-fill {
+  background: #f3b23a;
+  height: 12px;
+  border-radius: 30px;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.plan-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 40px;
+  text-align: center;
+}
+.plan-card.popular {
+  background: linear-gradient(145deg, #0f1b2b, #1b2638);
+  color: white;
+}
+.plan-price {
+  color: #f3b23a;
+  font-size: 2.8rem;
+  font-weight: 800;
+}
+
+/* INFO PANEL */
+.info-panel {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #0d1624;
+  color: white;
+  padding: 1.6rem 2.2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 999;
+  border-left: 8px solid #f3b23a;
+  max-width: 360px;
+  transform: translateY(120%);
+  opacity: 0;
+  transition: 0.4s;
+}
+.info-panel.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.info-close {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  padding: 0.2rem 0.7rem;
+  border-radius: 40px;
+}
+
+/* FOOTER */
+footer {
+  background: #0a111c;
+  color: #cbd5e0;
+  padding: 3.5rem 6% 1.8rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr 1.5fr;
+  gap: 2.5rem;
+}
+.social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: #1f2a36;
+  border-radius: 50%;
+  transition: 0.2s;
+  margin-right: 0.5rem;
+  color: white;
+}
+.social-icons a:hover {
+  background: #f3b23a;
+  color: #0a111c;
+  transform: translateY(-5px);
+}
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+}
+.footer-col ul li a {
+  color: #b3c2d1;
+  transition: 0.2s;
+  display: inline-block;
+}
+.footer-col ul li a:hover {
+  color: #f3b23a;
+  transform: translateX(5px);
+}
+
+/* BMI section custom */
+.bmi-section {
+  background: linear-gradient(145deg, #f0f4fa, #ffffff);
+  padding: 4rem 6%;
+}
+.bmi-card {
+  max-width: 500px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  padding: 2.5rem;
+}
+.bmi-input {
+  width: 100%;
+  padding: 1.2rem;
+  border: 2px solid #e0e7f0;
+  border-radius: 30px;
+  font-size: 1rem;
+  outline: none;
+}
+.bmi-btn {
+  border: none;
+  padding: 1.2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.bmi-btn.calc {
+  flex: 2;
+  background: #f3b23a;
+  color: #0b121f;
+}
+.bmi-btn.reset {
+  flex: 1;
+  background: #eef2f7;
+  color: #333;
+  border: 1px solid #ddd;
+}
+.bmi-result {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  border-radius: 30px;
+  background: #f8fafd;
+  text-align: center;
+}
+.bmi-tip {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  background: #0a192c;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+}
+
+/* footer extra classes */
+.footer-main {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 2fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+.footer-head {
+  color: white;
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #f3b23a;
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+.footer-links {
+  list-style: none;
+}
+.footer-links li {
+  margin-bottom: 0.8rem;
+}
+.footer-links li a {
+  color: #cbd5e0;
+  transition: 0.2s;
+}
+.footer-links li a:hover {
+  color: #f3b23a;
+  transform: translateX(5px);
+}
+.social-block {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #1f2a36;
+  padding: 1rem;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+  color: white;
+  transition: 0.2s;
+  text-decoration: none;
+}
+.social-block:hover {
+  background: #2a3542;
+}
+.footer-call-btn {
+  flex: 1;
+  background: #f3b23a;
+  color: #0b121f;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.footer-email-btn {
+  flex: 1;
+  background: #1f2a36;
+  color: white;
+  text-align: center;
+  padding: 0.8rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #3a4552;
+}
+.footer-bottom {
+  text-align: center;
+}
+.footer-bottom p {
+  color: #8a9db0;
+  font-size: 0.95rem;
+}
+.footer-bottom p:last-child {
+  color: #6a7c8c;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* responsiveness */
+@media (max-width: 950px) {
+  .about-grid,
+  .footer-grid,
+  .video-showcase,
+  .footer-main {
+    grid-template-columns: 1fr;
+  }
+  nav ul {
+    display: none;
+  }
+  .mobile-toggle {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
