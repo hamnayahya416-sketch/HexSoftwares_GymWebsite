@@ -1,4 +1,4 @@
-// script.js – FitHub Lahore | FINAL WORKING VERSION (separated)
+// script.js – FitHub Lahore | FINAL WORKING VERSION
 
 (function() {
   "use strict";
@@ -96,41 +96,39 @@
     copyrightPara.innerHTML = copyrightPara.innerHTML.replace("2026", currentYear);
   }
 
-  // ---------- VIDEO PLAY ----------
-  window.playVideo = function(e) {
-    if (e) {
+  // ---------- VIDEO PLAY - FIXED FOR LOCAL VIDEO ----------
+  const watchBtn = document.getElementById('watchVideoBtn');
+  const video = document.getElementById('gymVideo');
+  
+  if (watchBtn && video) {
+    watchBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation();
-    }
-
-    window.showInfo(
-      "fas fa-play-circle",
-      "🎬 Watch Full Video",
-      "Starting workout video...",
-    );
-
-    const video = document.querySelector("video");
-    if (video) {
+      
+      // Scroll to video smoothly
       video.scrollIntoView({ behavior: "smooth", block: "center" });
+      
+      // Show message to click play
+      window.showInfo(
+        "fas fa-hand-pointer",
+        "🎬 Click Play Button",
+        "Press the play button on video to start",
+      );
+      
+      // Highlight the video
+      video.style.boxShadow = "0 0 0 4px #f3b23a";
       setTimeout(() => {
-        video.play().catch(() => {
-          window.showInfo(
-            "fas fa-hand-pointer",
-            "👆 Click to Play",
-            "Please click the video player.",
-          );
-        });
-      }, 500);
-    }
-    return false;
-  };
-
-  const watchBtn = document.getElementById("watchVideoBtn");
-  if (watchBtn) {
-    watchBtn.onclick = window.playVideo;
+        video.style.boxShadow = "none";
+      }, 2000);
+      
+      // Optional: Try to play (may be blocked)
+      video.play().catch(() => {
+        // User must click play manually - this is normal
+        console.log("Manual play required");
+      });
+    });
   }
 
-  // ---------- BMI CALCULATOR - FINAL VERSION ----------
+  // ---------- BMI CALCULATOR WITH EXPLANATION ----------
   (function() {
     const calculateBtn = document.getElementById("calculateBMI");
     const resetBtn = document.getElementById("resetBMI");
@@ -175,38 +173,63 @@
         return;
       }
 
+      // BMI FORMULA: weight(kg) / [height(m)]²
       const bmi = weight / ((height / 100) * (height / 100));
       const roundedBMI = Math.round(bmi * 10) / 10;
 
-      let status, icon, color, message;
+      let status, icon, color, message, detailedMessage;
 
+      // BMI CATEGORIES EXPLAINED:
       if (bmi < 18.5) {
         status = "Underweight";
         icon = "fas fa-weight-scale";
         color = "#4caf50";
         message = "Your weight is low. Take nutrition guidance from Hamna!";
-      } else if (bmi < 25) {
-        status = "Fit ✅";
+        detailedMessage = `Your BMI is ${roundedBMI}. This means you are UNDERWEIGHT. You should gain some weight with proper nutrition.`;
+      } 
+      else if (bmi < 25) {
+        status = "Fit ✅ (Healthy)";
         icon = "fas fa-check-circle";
         color = "#8bc34a";
         message = "Congratulations! You are perfectly fit. Keep it up!";
-      } else {
+        detailedMessage = `Your BMI is ${roundedBMI}. This is in the HEALTHY range (18.5-24.9). You have a normal body weight. Maintain it with regular exercise!`;
+      } 
+      else if (bmi < 30) {
         status = "Overweight";
         icon = "fas fa-exclamation-triangle";
         color = "#f3b23a";
         message = "Your weight is high. Join FitHub and start working out!";
+        detailedMessage = `Your BMI is ${roundedBMI}. This means you are OVERWEIGHT (25-29.9). You should start exercising to reach healthy range.`;
+      }
+      else {
+        status = "Obese";
+        icon = "fas fa-exclamation-circle";
+        color = "#f44336";
+        message = "Your weight is very high. Personal training recommended!";
+        detailedMessage = `Your BMI is ${roundedBMI}. This means you are OBESE (30+). Please join FitHub for professional guidance.`;
       }
 
       resultDiv.style.display = "block";
       resultDiv.style.animation = "fadeInUp 0.5s";
+      
+      // Show result with clear explanation
       resultDiv.innerHTML = `
         <div style="text-align:center;">
           <div style="width:90px;height:90px;border-radius:50%;background:${color};display:flex;align-items:center;justify-content:center;margin:0 auto;">
             <i class="${icon}" style="color:white;font-size:2.8rem;"></i>
           </div>
           <div style="font-size:3rem;font-weight:800;color:${color};">${roundedBMI}</div>
-          <div style="font-size:2rem;font-weight:700;color:#0a192c;margin:1rem 0;">${status}</div>
-          <div style="background:white;padding:1rem;border-radius:20px;">${message}</div>
+          <div style="font-size:1.8rem;font-weight:700;color:#0a192c;margin:1rem 0;">${status}</div>
+          <div style="background:white;padding:1.5rem;border-radius:20px;text-align:left;margin:1rem 0;">
+            <p style="margin-bottom:0.5rem;"><strong>📌 What this means:</strong></p>
+            <p>${detailedMessage}</p>
+            <hr style="margin:1rem 0;">
+            <p><strong>📊 BMI Categories:</strong></p>
+            <p>• Below 18.5 = Underweight</p>
+            <p>• 18.5 - 24.9 = Healthy ✅</p>
+            <p>• 25.0 - 29.9 = Overweight</p>
+            <p>• 30.0 and above = Obese</p>
+          </div>
           <div style="margin-top:1rem;color:#f3b23a;font-weight:600;">
             <i class="fas fa-phone-alt"></i> 0316 4393246
           </div>
